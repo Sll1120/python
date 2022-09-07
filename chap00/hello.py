@@ -24,3 +24,13 @@ his_instrument = 'guitar'
 his_name = 'Robert Johnson'
 artist_intro = his_name + what_he_does + his_instrument
 print(artist_intro)
+
+counter = 100 # 赋值整型变量
+miles = 1000.0 # 浮点型
+name = "John" # 字符串
+print(counter)
+print(miles)
+print(name)
+
+a, b, c = 1, 2, "john"
+print(a),print(b),print(c)
