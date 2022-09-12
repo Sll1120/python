@@ -7,9 +7,3 @@ def fun1(**args):
     print(args)
 fun1(a=10)
 fun1(a=20,b=30,c=40)
-print('hello','word','java')
-
-
-
-
-

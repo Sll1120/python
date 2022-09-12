@@ -422,6 +422,7 @@ print ("(a + b) * (c / d) 运算结果为：",  e)
  
 e = a + (b * c) / d      #  20 + (150/5)
 print ("a + (b * c) / d 运算结果为：",  e)
+
 #以上实例输出结果：
 #(a + b) * c / d 运算结果为： 90.0
 #((a + b) * c) / d 运算结果为： 90.0
@@ -436,6 +437,11 @@ if x or y and z:
     print("yes")
 else:
     print("no")
+
+a=int(input('请输入一个加数：'))
+b=int(input('请输入另一个加数：'))
+print(type(a),type(b))
+print('a+b 的结果是：', a+b)
 #以上实例先计算 y and z 并返回 False ，然后 x or False 返回 True，输出结果：
 #
 #yes
