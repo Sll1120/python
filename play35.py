@@ -5,5 +5,5 @@ for item in range(100,1000):
     bai=item//100 #百位
     # print(bai,shi,ge)
     # 判断
-    if ge**3+shi**3+bai**3==item:
-        print(item) 
+if ge**3+shi**3+bai**3==item:
+    print(item) 
