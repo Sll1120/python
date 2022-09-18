@@ -168,40 +168,45 @@ for i in range(len(a)):
 #实例
 #while 中使用 break：
 #实例
-#n = 5
-#while n > 0:
-#    n -= 1
-#    if n == 2:
-#        break
-#    print(n)
-#print('循环结束。')
+print('------------------------------------------')
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        break
+    print(n)
+print('循环结束。')
 #输出结果为：
 #循环结束。
 #while 中使用 continue：
+print('------------------------------------------')
 #实例
-#n = 5
-#while n > 0:
-#    n -= 1
-#    if n == 2:
-#        continue
-#    print(n)
-#print('循环结束。')
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        continue
+    print(n)
+print('循环结束。')
 #输出结果为：
 #循环结束。
 #更多实例如下：
+print('------------------------------------------')
 #实例
-##!/usr/bin/python3
-#for letter in 'Runoob':     # 第一个实例
-#   if letter == 'b':
-#      break
-#   print ('当前字母为 :', letter)
-#var = 10                    # 第二个实例
-#while var > 0:
-#   print ('当前变量值为 :', var)
-#   var = var -1
-#   if var == 5:
-#      break
-#print ("Good bye!")
+#!/usr/bin/python3
+for letter in 'Runoob':     # 第一个实例
+   if letter == 'b':
+      break
+   print ('当前字母为 :', letter)
+print('------------------------------------------')
+var = 10                    # 第二个实例
+while var > 0:
+   print ('当前变量值为 :', var)
+   var = var -1
+   if var == 5:
+      break
+print ("Good bye!")
+print('------------------------------------------')
 #执行以上脚本输出结果为：
 #当前字母为 : R
 #当前字母为 : u
@@ -216,18 +221,18 @@ for i in range(len(a)):
 #Good bye!
 #以下实例循环字符串 Runoob，碰到字母 o 跳过输出：
 #实例
-##!/usr/bin/python3
-#for letter in 'Runoob':     # 第一个实例
-#   if letter == 'o':        # 字母为 o 时跳过输出
-#      continue
-#   print ('当前字母 :', letter)
-#var = 10                    # 第二个实例
-#while var > 0:
-#   var = var -1
-#   if var == 5:             # 变量为 5 时跳过输出
-#      continue
-#   print ('当前变量值 :', var)
-#print ("Good bye!")
+#!/usr/bin/python3
+for letter in 'Runoob':     # 第一个实例
+   if letter == 'o':        # 字母为 o 时跳过输出
+      continue
+   print ('当前字母 :', letter)
+var = 10                    # 第二个实例
+while var > 0:
+   var = var -1
+   if var == 5:             # 变量为 5 时跳过输出
+      continue
+   print ('当前变量值 :', var)
+print ("Good bye!")
 #执行以上脚本输出结果为：
 #当前字母 : R
 #当前字母 : u
@@ -246,15 +251,15 @@ for i in range(len(a)):
 #循环语句可以有 else 子句，它在穷尽列表(以for循环)或条件变为 false (以while循环)导致循环终止时被执行，但循环被 break 终止时不执行。
 #如下实例用于查询质数的循环例子:
 #实例
-##!/usr/bin/python3
-#for n in range(2, 10):
-#    for x in range(2, n):
-#        if n % x == 0:
-#            print(n, '等于', x, '*', n//x)
-#            break
-#    else:
-#        # 循环中没有找到元素
-#        print(n, ' 是质数')
+#!/usr/bin/python3
+for n in range(2, 10):
+    for x in range(2, n):
+        if n % x == 0:
+            print(n, '等于', x, '*', n//x)
+            break
+    else:
+        # 循环中没有找到元素
+        print(n, ' 是质数')
 #执行以上脚本输出结果为：
 #2  是质数
 #3  是质数
@@ -276,13 +281,13 @@ for i in range(len(a)):
 #...     pass
 #以下实例在字母为 o 时 执行 pass 语句块:
 #实例
-##!/usr/bin/python3
-#for letter in 'Runoob':
-#   if letter == 'o':
-#      pass
-#      print ('执行 pass 块')
-#   print ('当前字母 :', letter)
-#print ("Good bye!")
+#!/usr/bin/python3
+for letter in 'Runoob':
+   if letter == 'o':
+      pass
+      print ('执行 pass 块')
+   print ('当前字母 :', letter)
+print ("Good bye!")
 #执行以上脚本输出结果为：
 #当前字母 : R
 #当前字母 : u
