@@ -10,20 +10,20 @@
 #模块是一个包含所有你定义的函数和变量的文件，其后缀名是.py。模块可以被别的程序引入，以使用该模块中的函数等功能。这也是使用 python 标准库的方法。
 #下面是一个使用 python 标准库中模块的例子。
 #实例(Python 3.0+)
+print('(1) -----------------------------------------------------------')
 #!/usr/bin/python3
-# 文件名: using_sys.py
 import sys
 print('命令行参数如下:')
 for i in sys.argv:
    print(i)
-print('\nPython 路径为：', sys.path, '\n')
+print('\n\nPython 路径为：', sys.path, '\n')
 #执行结果如下所示：
 #$ python using_sys.py 参数1 参数2
 #命令行参数如下:
 #using_sys.py
 #参数1
 #参数2
-#Python 路径为： ['/root', '/usr/lib/python3.4', '/usr/lib/python3.4/plat-x86_64-linux-gnu', '/usr/lib/python3.4/lib-dynload', '/usr/local/lib/python3.4/dist-packages', '/usr/lib/python3/dist-packages'] 
+#Python 路径为： ['/root', '/usr/lib/python3.4', '/usr/lib/python3.4/plat-x86_64-linux-gnu', '/usr/lib/python3.4/lib-dynload', '/usr/local/lib/python3.4/dist-packages', '/usr/lib/python3/dist-packages']
 #1、import sys 引入 python 标准库中的 sys.py 模块；这是引入某一模块的方法。
 #2、sys.argv 是一个包含命令行参数的列表。
 #3、sys.path 包含了一个 Python 解释器自动查找所需模块的路径的列表。
@@ -32,7 +32,7 @@ print('\nPython 路径为：', sys.path, '\n')
 #import module1[, module2[,... moduleN]
 #当解释器遇到 import 语句，如果模块在当前的搜索路径就会被导入。
 #搜索路径是一个解释器会先进行搜索的所有目录的列表。如想要导入模块 support，需要把命令放在脚本的顶端：
-#support.py 文件代码
+##support.py 文件代码
 ##!/usr/bin/python3
 ## Filename: support.py
 #def print_func( par ):
@@ -40,14 +40,15 @@ print('\nPython 路径为：', sys.path, '\n')
 #    return
 #test.py 引入 support 模块：
 #test.py 文件代码
-##!/usr/bin/python3
-## Filename: test.py
-## 导入模块
-#import support
-## 现在可以调用模块里包含的函数了
-#support.print_func("Runoob")
+#!/usr/bin/python3
+# Filename: test.py
+# 导入模块
+print('(2) -----------------------------------------------------------')
+import module_support
+# 现在可以调用模块里包含的函数了
+module_support.print_func("Runoob")
 #以上实例输出结果：
-#$ python3 test.py 
+#$ python3 test.py
 #Hello :  Runoob
 #下载代码
 #一个模块只会被导入一次，不管你执行了多少次 import。这样可以防止导入模块被一遍又一遍地执行。
@@ -55,16 +56,17 @@ print('\nPython 路径为：', sys.path, '\n')
 #这就涉及到 Python 的搜索路径，搜索路径是由一系列目录名组成的，Python 解释器就依次从这些目录中去寻找所引入的模块。
 #这看起来很像环境变量，事实上，也可以通过定义环境变量的方式来确定搜索路径。
 #搜索路径是在 Python 编译或安装的时候确定的，安装新的库应该也会修改。搜索路径被存储在 sys 模块中的 path 变量，做一个简单的实验，在交互式解释器中，输入以下代码：
-#>>> import sys
-#>>> sys.path
+print('(3) -----------------------------------------------------------')
+import sys
+print(sys.path)
 #['', '/usr/lib/python3.4', '/usr/lib/python3.4/plat-x86_64-linux-gnu', '/usr/lib/python3.4/lib-dynload', '/usr/local/lib/python3.4/dist-packages', '/usr/lib/python3/dist-packages']
-#>>> 
+#>>>
 #sys.path 输出是一个列表，其中第一项是空串 ''，代表当前目录（若是从一个脚本中打印出来的话，可以更清楚地看出是哪个目录），亦即我们执行python解释器的目录（对于脚本的话就是运行的脚本所在的目录）。
 #因此若像我一样在当前目录下存在与要引入模块同名的文件，就会把要引入的模块屏蔽掉。
 #了解了搜索路径的概念，就可以在脚本中修改sys.path来引入一些不在搜索路径中的模块。
-#现在，在解释器的当前目录或者 sys.path 中的一个目录里面来创建一个fibo.py的文件，代码如下：
+#现在，在解释器的当前目录或者 sys.path 中的一个目录里面来创建一个module_fibo.py的文件，代码如下：
 #实例
-## 斐波那契(fibonacci)数列模块
+## 斐波那契(module_fibonacci)数列模块
 #def fib(n):    # 定义到 n 的斐波那契数列
 #    a, b = 0, 1
 #    while b < n:
@@ -79,28 +81,32 @@ print('\nPython 路径为：', sys.path, '\n')
 #        a, b = b, a+b
 #    return result
 #然后进入Python解释器，使用下面的命令导入这个模块：
-#>>> import fibo
-#这样做并没有把直接定义在fibo中的函数名称写入到当前符号表里，只是把模块fibo的名字写到了那里。
+print('(4-1) -----------------------------------------------------------')
+import module_fibo
+#这样做并没有把直接定义在module_fibo中的函数名称写入到当前符号表里，只是把模块module_fibo的名字写到了那里。
 #可以使用模块名称来访问函数：
 #实例
-#>>>fibo.fib(1000)
+module_fibo.fib(1000)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
-#>>> fibo.fib2(100)
+print('(4-2) -----------------------------------------------------------')
+module_fibo.fib2(100)
 #[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-#>>> fibo.__name__
-#'fibo'
+print('(4-3) -----------------------------------------------------------')
+module_fibo.__name__
+#'module_fibo'
 #如果你打算经常使用一个函数，你可以把它赋给一个本地的名称：
-#>>> fib = fibo.fib
+#>>> fib = module_fibo.fib
 #>>> fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
 #from … import 语句
 #Python 的 from 语句让你从模块中导入一个指定的部分到当前命名空间中，语法如下：
 #from modname import name1[, name2[, ... nameN]]
-#例如，要导入模块 fibo 的 fib 函数，使用如下语句：
-#>>> from fibo import fib, fib2
-#>>> fib(500)
+#例如，要导入模块 module_fibo 的 fib 函数，使用如下语句：
+print('(4-4) -----------------------------------------------------------')
+from module_fibo import fib, fib2
+fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
-#这个声明不会把整个fibo模块导入到当前的命名空间中，它只会将fibo里的fib函数引入进来。
+#这个声明不会把整个module_fibo模块导入到当前的命名空间中，它只会将module_fibo里的fib函数引入进来。
 #from … import * 语句
 #把一个模块的所有内容全都导入到当前的命名空间也是可行的，只需使用如下声明：
 #from modname import *
@@ -112,38 +118,40 @@ print('\nPython 路径为：', sys.path, '\n')
 #从另一个方面，当你确实知道你在做什么的话，你也可以通过 modname.itemname 这样的表示法来访问模块内的函数。
 #模块是可以导入其他模块的。在一个模块（或者脚本，或者其他地方）的最前面使用 import 来导入一个模块，当然这只是一个惯例，而不是强制的。被导入的模块的名称将被放入当前操作的模块的符号表中。
 #还有一种导入的方法，可以使用 import 直接把模块内（函数，变量的）名称导入到当前操作模块。比如:
-#>>> from fibo import fib, fib2
-#>>> fib(500)
+#from module_fibo import fib, fib2
+#fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
-#这种导入的方法不会把被导入的模块的名称放在当前的字符表中（所以在这个例子里面，fibo 这个名称是没有定义的）。
+#这种导入的方法不会把被导入的模块的名称放在当前的字符表中（所以在这个例子里面，module_fibo 这个名称是没有定义的）。
 #这还有一种方法，可以一次性的把模块中的所有（函数，变量）名称都导入到当前模块的字符表:
-#>>> from fibo import *
+#>>> from module_fibo import *
 #>>> fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
 #这将把所有的名字都导入进来，但是那些由单一下划线（_）开头的名字不在此例。大多数情况， Python程序员不使用这种方法，因为引入的其它来源的命名，很可能覆盖了已有的定义。
 #__name__属性
 #一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，模块中的某一程序块不执行，我们可以用__name__属性来使该程序块仅在该模块自身运行时执行。
-##!/usr/bin/python3
-## Filename: using_name.py
-#if __name__ == '__main__':
-#   print('程序自身在运行')
-#else:
-#   print('我来自另一模块')
+print('(5) -----------------------------------------------------------')
+#!/usr/bin/python3
+# Filename: module_using_name.py
+if __name__ == '__main__':
+   print('程序自身在运行')
+else:
+   print('我来自另一模块')
 #运行输出如下：
-#$ python using_name.py
+#$ python module_using_name.py
 #程序自身在运行
 #$ python
-#>>> import using_name
+import module_using_name
 #我来自另一模块
 #>>>
 #说明： 每个模块都有一个__name__属性，当其值是'__main__'时，表明该模块自身在运行，否则是被引入。
 #说明：__name__ 与 __main__ 底下是双下划线， _ _ 是这样去掉中间的那个空格。
 #dir() 函数
 #内置的函数 dir() 可以找到模块内定义的所有名称。以一个字符串列表的形式返回:
-#>>> import fibo, sys
-#>>> dir(fibo)
+print('(6) -----------------------------------------------------------')
+import module_fibo, sys
+print(dir(module_fibo))
 #['__name__', 'fib', 'fib2']
-#>>> dir(sys)  
+print(dir(sys))
 #['__displayhook__', '__doc__', '__excepthook__', '__loader__', '__name__',
 # '__package__', '__stderr__', '__stdin__', '__stdout__',
 # '_clear_type_cache', '_current_frames', '_debugmallocstats', '_getframe',
@@ -162,20 +170,18 @@ print('\nPython 路径为：', sys.path, '\n')
 # 'setswitchinterval', 'settrace', 'stderr', 'stdin', 'stdout',
 # 'thread_info', 'version', 'version_info', 'warnoptions']
 #如果没有给定参数，那么 dir() 函数会罗列出当前定义的所有名称:
-#>>> a = [1, 2, 3, 4, 5]
-#>>> import fibo
-#>>> fib = fibo.fib
-#>>> dir() # 得到一个当前模块中定义的属性列表
-#['__builtins__', '__name__', 'a', 'fib', 'fibo', 'sys']
-#>>> a = 5 # 建立一个新的变量 'a'
-#>>> dir()
+print('(6) -----------------------------------------------------------')
+a = [1, 2, 3, 4, 5]
+import module_fibo
+fib = module_fibo.fib
+print(dir()) # 得到一个当前模块中定义的属性列表
+#['__builtins__', '__name__', 'a', 'fib', 'module_fibo', 'sys']
+a = 5 # 建立一个新的变量 'a'
+print(dir())
 #['__builtins__', '__doc__', '__name__', 'a', 'sys']
-#>>>
-#>>> del a # 删除变量名a
-#>>>
-#>>> dir()
+del a # 删除变量名a
+print(dir())
 #['__builtins__', '__doc__', '__name__', 'sys']
-#>>>
 #标准模块
 #Python 本身带着一些标准的模块库，在 Python 库参考文档中将会介绍到（就是后面的"库参考文档"）。
 #有些模块直接被构建在解析器里，这些虽然不是一些语言内置的功能，但是他却能很高效的使用，甚至是系统级调用也没问题。
@@ -189,7 +195,7 @@ print('\nPython 路径为：', sys.path, '\n')
 #>>> sys.ps1 = 'C> '
 #C> print('Runoob!')
 #Runoob!
-#C> 
+#C>
 #包是一种管理 Python 模块命名空间的形式，采用"点模块名称"。
 #比如一个模块的名称是 A.B， 那么他表示一个包 A中的子模块 B 。
 #就好像使用模块的时候，你不用担心不同模块之间的全局变量相互影响一样，采用点模块名称这种形式也不用担心不同库之间的模块重名的情况。
