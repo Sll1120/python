@@ -1,9 +1,19 @@
+<<<<<<< HEAD
 #======================================
 # file name:python3_15循环语句.py
 # author:liangliangSu
 # date of writing:2022-09-14 23:24
 #======================================
 #!/usr/bin/env python3
+=======
+# **********************************************************
+# * Author : liangliangsu
+# * Email : sll917@hotmail.com
+# * Create time : 2022-09-15 11:03
+# * Filename : python15循环语句.py
+#!/usr/bin/python3
+# **********************************************************
+>>>>>>> 4b17adb (change)
 #Python3 循环语句
 #本章节将为大家介绍 Python 循环语句的使用。
 #Python 中的循环语句有 for 和 while。
@@ -43,16 +53,26 @@ print("1 到 %d 之和为: %d" % (n,sum))
 #你可以使用 CTRL+C 来退出当前的无限循环。
 #无限循环在服务器上客户端的实时请求非常有用。
 #while 循环使用 else 语句
+<<<<<<< HEAD
 #如果 while 后面的条件语句为 false 时，则执行 else 的语句块。
 #语法格式如下：
 ####################################################
+=======
+############################################################
+#如果 while 后面的条件语句为 false 时，则执行 else 的语句块。
+#语法格式如下：
+>>>>>>> 4b17adb (change)
 #while <expr>:
 #    <statement(s)>
 #else:
 #    <additional_statement(s)>
 # expr 条件语句为 true 则执行 statement(s) 语句块，
 # 如果为 false，则执行 additional_statement(s)。
+<<<<<<< HEAD
 ####################################################
+=======
+############################################################
+>>>>>>> 4b17adb (change)
 #循环输出数字，并判断大小：
 #实例
 #!/usr/bin/python3
@@ -74,7 +94,12 @@ else:
 #实例
 ##!/usr/bin/python
 #flag = 1
+<<<<<<< HEAD
 #while (flag): print ('欢迎访问菜鸟教程!')
+=======
+#while (flag): 
+#print ('欢迎访问菜鸟教程!')
+>>>>>>> 4b17adb (change)
 #print ("Good bye!")
 #注意：以上的无限循环你可以使用 CTRL+C 来中断循环。
 #执行以上脚本，输出结果如下：
@@ -83,6 +108,7 @@ else:
 #欢迎访问菜鸟教程!
 #欢迎访问菜鸟教程!
 #欢迎访问菜鸟教程!
+<<<<<<< HEAD
 #################################################################
 #for 语句
 #Python for 循环可以遍历任何可迭代对象，如一个列表或者一个字符串。
@@ -100,6 +126,23 @@ else:
 languages = ["C", "C++", "Perl", "Python"]
 for x in languages:
     print (x)
+=======
+#……
+#for 语句
+#Python for 循环可以遍历任何可迭代对象，如一个列表或者一个字符串。
+#for循环的一般格式如下：
+#for <variable> in <sequence>:
+#    <statements>
+#else:
+#    <statements>
+#流程图：
+#Python for 循环实例：
+#实例
+languages = ["C", "C++", "Perl", "Python"] 
+for x in languages:
+     print (x)
+#C
+>>>>>>> 4b17adb (change)
 #C++
 #Perl
 #Python
@@ -125,14 +168,37 @@ print("完成循环!")
 #实例
 for i in range(5):
      print(i)
+<<<<<<< HEAD
+=======
+#0
+#1
+#2
+#3
+#4
+>>>>>>> 4b17adb (change)
 #你也可以使用range指定区间的值：
 #实例
 for i in range(5,9) :
     print(i)
+<<<<<<< HEAD
+=======
+#5
+#6
+#7
+#8
+#>>>
+>>>>>>> 4b17adb (change)
 #也可以使range以指定数字开始并指定不同的增量(甚至可以是负数，有时这也叫做'步长'):
 #实例
 for i in range(0, 10, 3) :
     print(i)
+<<<<<<< HEAD
+=======
+#0
+#3
+#6
+#9
+>>>>>>> 4b17adb (change)
 #负数：
 #实例
 for i in range(-10, -100, -30) :
@@ -140,6 +206,7 @@ for i in range(-10, -100, -30) :
 #-10
 #-40
 #-70
+<<<<<<< HEAD
 #>>>
 #您可以结合range()和len()函数以遍历一个序列的索引,如下所示:
 #实例
@@ -148,6 +215,14 @@ a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
 print(len(a))
 for i in range(len(a)):
      print(i, a[i])
+=======
+#您可以结合range()和len()函数以遍历一个序列的索引,如下所示:
+#实例
+a = ['Google', 'Baidu', 'Runoob', 'Taobao', 'QQ']
+for i in range(len(a)):
+    print(len(a))
+    print(i, a[i])
+>>>>>>> 4b17adb (change)
 #0 Google
 #1 Baidu
 #2 Runoob
@@ -168,6 +243,7 @@ for i in range(len(a)):
 #实例
 #while 中使用 break：
 #实例
+<<<<<<< HEAD
 print('------------------------------------------')
 n = 5
 while n > 0:
@@ -211,6 +287,53 @@ print('------------------------------------------')
 #当前字母为 : R
 #当前字母为 : u
 ###当前字母为 : n
+=======
+#n = 5
+#while n > 0:
+#    n -= 1
+#    if n == 2:
+#        break
+#    print(n)
+#print('循环结束。')
+#输出结果为：
+#4
+#3
+#循环结束。
+#while 中使用 continue：
+#实例
+#n = 5
+#while n > 0:
+#    n -= 1
+#    if n == 2:
+#        continue
+#    print(n)
+#print('循环结束。')
+#输出结果为：
+#4
+#3
+#1
+#0
+#循环结束。
+#更多实例如下：
+#实例
+##!/usr/bin/python3
+#for letter in 'Runoob':     # 第一个实例
+#   if letter == 'b':
+#      break
+#   print ('当前字母为 :', letter)
+#  
+#var = 10                    # 第二个实例
+#while var > 0:              
+#   print ('当前变量值为 :', var)
+#   var = var -1
+#   if var == 5:
+#      break
+#print ("Good bye!")
+#执行以上脚本输出结果为：
+#当前字母为 : R
+#当前字母为 : u
+#当前字母为 : n
+>>>>>>> 4b17adb (change)
 #当前字母为 : o
 #当前字母为 : o
 #当前变量值为 : 10
@@ -221,6 +344,7 @@ print('------------------------------------------')
 #Good bye!
 #以下实例循环字符串 Runoob，碰到字母 o 跳过输出：
 #实例
+<<<<<<< HEAD
 #!/usr/bin/python3
 for letter in 'Runoob':     # 第一个实例
    if letter == 'o':        # 字母为 o 时跳过输出
@@ -233,6 +357,20 @@ while var > 0:
       continue
    print ('当前变量值 :', var)
 print ("Good bye!")
+=======
+##!/usr/bin/python3
+#for letter in 'Runoob':     # 第一个实例
+#   if letter == 'o':        # 字母为 o 时跳过输出
+#      continue
+#   print ('当前字母 :', letter)
+#var = 10                    # 第二个实例
+#while var > 0:              
+#   var = var -1
+#   if var == 5:             # 变量为 5 时跳过输出
+#      continue
+#   print ('当前变量值 :', var)
+#print ("Good bye!")
+>>>>>>> 4b17adb (change)
 #执行以上脚本输出结果为：
 #当前字母 : R
 #当前字母 : u
@@ -251,6 +389,7 @@ print ("Good bye!")
 #循环语句可以有 else 子句，它在穷尽列表(以for循环)或条件变为 false (以while循环)导致循环终止时被执行，但循环被 break 终止时不执行。
 #如下实例用于查询质数的循环例子:
 #实例
+<<<<<<< HEAD
 #!/usr/bin/python3
 for n in range(2, 10):
     for x in range(2, n):
@@ -260,6 +399,17 @@ for n in range(2, 10):
     else:
         # 循环中没有找到元素
         print(n, ' 是质数')
+=======
+##!/usr/bin/python3
+#for n in range(2, 10):
+#    for x in range(2, n):
+#        if n % x == 0:
+#            print(n, '等于', x, '*', n//x)
+#            break
+#    else:
+#        # 循环中没有找到元素
+#        print(n, ' 是质数')
+>>>>>>> 4b17adb (change)
 #执行以上脚本输出结果为：
 #2  是质数
 #3  是质数
@@ -281,6 +431,7 @@ for n in range(2, 10):
 #...     pass
 #以下实例在字母为 o 时 执行 pass 语句块:
 #实例
+<<<<<<< HEAD
 #!/usr/bin/python3
 for letter in 'Runoob':
    if letter == 'o':
@@ -288,6 +439,15 @@ for letter in 'Runoob':
       print ('执行 pass 块')
    print ('当前字母 :', letter)
 print ("Good bye!")
+=======
+##!/usr/bin/python3
+#for letter in 'Runoob': 
+#   if letter == 'o':
+#      pass
+#      print ('执行 pass 块')
+#   print ('当前字母 :', letter)
+#print ("Good bye!")
+>>>>>>> 4b17adb (change)
 #执行以上脚本输出结果为：
 #当前字母 : R
 #当前字母 : u

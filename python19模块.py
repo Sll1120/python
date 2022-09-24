@@ -44,9 +44,9 @@ print('\n\nPython 路径为：', sys.path, '\n')
 # Filename: test.py
 # 导入模块
 print('(2) -----------------------------------------------------------')
-import module_support
+import python19_support
 # 现在可以调用模块里包含的函数了
-module_support.print_func("Runoob")
+python19_support.print_func("Runoob")
 #以上实例输出结果：
 #$ python3 test.py
 #Hello :  Runoob
@@ -64,9 +64,9 @@ print(sys.path)
 #sys.path 输出是一个列表，其中第一项是空串 ''，代表当前目录（若是从一个脚本中打印出来的话，可以更清楚地看出是哪个目录），亦即我们执行python解释器的目录（对于脚本的话就是运行的脚本所在的目录）。
 #因此若像我一样在当前目录下存在与要引入模块同名的文件，就会把要引入的模块屏蔽掉。
 #了解了搜索路径的概念，就可以在脚本中修改sys.path来引入一些不在搜索路径中的模块。
-#现在，在解释器的当前目录或者 sys.path 中的一个目录里面来创建一个module_fibo.py的文件，代码如下：
+#现在，在解释器的当前目录或者 sys.path 中的一个目录里面来创建一个python19_fibo.py的文件，代码如下：
 #实例
-## 斐波那契(module_fibonacci)数列模块
+## 斐波那契(python19_fibonacci)数列模块
 #def fib(n):    # 定义到 n 的斐波那契数列
 #    a, b = 0, 1
 #    while b < n:
@@ -82,31 +82,31 @@ print(sys.path)
 #    return result
 #然后进入Python解释器，使用下面的命令导入这个模块：
 print('(4-1) -----------------------------------------------------------')
-import module_fibo
-#这样做并没有把直接定义在module_fibo中的函数名称写入到当前符号表里，只是把模块module_fibo的名字写到了那里。
+import python19_fibo
+#这样做并没有把直接定义在python19_fibo中的函数名称写入到当前符号表里，只是把模块python19_fibo的名字写到了那里。
 #可以使用模块名称来访问函数：
 #实例
-module_fibo.fib(1000)
+python19_fibo.fib(1000)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 print('(4-2) -----------------------------------------------------------')
-module_fibo.fib2(100)
+python19_fibo.fib2(100)
 #[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 print('(4-3) -----------------------------------------------------------')
-module_fibo.__name__
-#'module_fibo'
+python19_fibo.__name__
+#'python19_fibo'
 #如果你打算经常使用一个函数，你可以把它赋给一个本地的名称：
-#>>> fib = module_fibo.fib
+#>>> fib = python19_fibo.fib
 #>>> fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
 #from … import 语句
 #Python 的 from 语句让你从模块中导入一个指定的部分到当前命名空间中，语法如下：
 #from modname import name1[, name2[, ... nameN]]
-#例如，要导入模块 module_fibo 的 fib 函数，使用如下语句：
+#例如，要导入模块 python19_fibo 的 fib 函数，使用如下语句：
 print('(4-4) -----------------------------------------------------------')
-from module_fibo import fib, fib2
+from python19_fibo import fib, fib2
 fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
-#这个声明不会把整个module_fibo模块导入到当前的命名空间中，它只会将module_fibo里的fib函数引入进来。
+#这个声明不会把整个python19_fibo模块导入到当前的命名空间中，它只会将python19_fibo里的fib函数引入进来。
 #from … import * 语句
 #把一个模块的所有内容全都导入到当前的命名空间也是可行的，只需使用如下声明：
 #from modname import *
@@ -118,12 +118,12 @@ fib(500)
 #从另一个方面，当你确实知道你在做什么的话，你也可以通过 modname.itemname 这样的表示法来访问模块内的函数。
 #模块是可以导入其他模块的。在一个模块（或者脚本，或者其他地方）的最前面使用 import 来导入一个模块，当然这只是一个惯例，而不是强制的。被导入的模块的名称将被放入当前操作的模块的符号表中。
 #还有一种导入的方法，可以使用 import 直接把模块内（函数，变量的）名称导入到当前操作模块。比如:
-#from module_fibo import fib, fib2
+#from python19_fibo import fib, fib2
 #fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
-#这种导入的方法不会把被导入的模块的名称放在当前的字符表中（所以在这个例子里面，module_fibo 这个名称是没有定义的）。
+#这种导入的方法不会把被导入的模块的名称放在当前的字符表中（所以在这个例子里面，python19_fibo 这个名称是没有定义的）。
 #这还有一种方法，可以一次性的把模块中的所有（函数，变量）名称都导入到当前模块的字符表:
-#>>> from module_fibo import *
+#>>> from python19_fibo import *
 #>>> fib(500)
 #1 1 2 3 5 8 13 21 34 55 89 144 233 377
 #这将把所有的名字都导入进来，但是那些由单一下划线（_）开头的名字不在此例。大多数情况， Python程序员不使用这种方法，因为引入的其它来源的命名，很可能覆盖了已有的定义。
@@ -131,16 +131,16 @@ fib(500)
 #一个模块被另一个程序第一次引入时，其主程序将运行。如果我们想在模块被引入时，模块中的某一程序块不执行，我们可以用__name__属性来使该程序块仅在该模块自身运行时执行。
 print('(5) -----------------------------------------------------------')
 #!/usr/bin/python3
-# Filename: module_using_name.py
+# Filename: python19_using_name.py
 if __name__ == '__main__':
    print('程序自身在运行')
 else:
    print('我来自另一模块')
 #运行输出如下：
-#$ python module_using_name.py
+#$ python python19_using_name.py
 #程序自身在运行
 #$ python
-import module_using_name
+import python19_using_name
 #我来自另一模块
 #>>>
 #说明： 每个模块都有一个__name__属性，当其值是'__main__'时，表明该模块自身在运行，否则是被引入。
@@ -148,8 +148,8 @@ import module_using_name
 #dir() 函数
 #内置的函数 dir() 可以找到模块内定义的所有名称。以一个字符串列表的形式返回:
 print('(6) -----------------------------------------------------------')
-import module_fibo, sys
-print(dir(module_fibo))
+import python19_fibo, sys
+print(dir(python19_fibo))
 #['__name__', 'fib', 'fib2']
 print(dir(sys))
 #['__displayhook__', '__doc__', '__excepthook__', '__loader__', '__name__',
@@ -172,10 +172,10 @@ print(dir(sys))
 #如果没有给定参数，那么 dir() 函数会罗列出当前定义的所有名称:
 print('(6) -----------------------------------------------------------')
 a = [1, 2, 3, 4, 5]
-import module_fibo
-fib = module_fibo.fib
+import python19_fibo
+fib = python19_fibo.fib
 print(dir()) # 得到一个当前模块中定义的属性列表
-#['__builtins__', '__name__', 'a', 'fib', 'module_fibo', 'sys']
+#['__builtins__', '__name__', 'a', 'fib', 'python19_fibo', 'sys']
 a = 5 # 建立一个新的变量 'a'
 print(dir())
 #['__builtins__', '__doc__', '__name__', 'a', 'sys']
