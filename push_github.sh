@@ -6,6 +6,6 @@
 # * Filename : github_push.sh
 # **********************************************************
 git add .
-git commit -m "change v1.$1"
-git push github master
-
+git commit -m "change V`date "+%Y-%m-%d %H:%M"`"
+#git push github master
+git push -u github +master
