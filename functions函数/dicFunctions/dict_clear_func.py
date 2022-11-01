@@ -1,10 +1,10 @@
+#!/usr/bin/env python3
 #======================================
 # file name:dict_clear_func.py
 # author:liangliangSu
 # date of writing:2022-09-12 20:34
 # description:
 #======================================
-#!/usr/bin/env python3
 #Python3 字典 clear()方法
 #描述
 #Python 字典 clear() 函数用于删除字典内所有元素。
