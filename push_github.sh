@@ -3,9 +3,9 @@
 # * Author : liangliangsu
 # * Email : sll917@hotmail.com
 # * Create time : 2022-09-20 16:46
-# * Filename : push_gitee.sh
+# * Filename : github_push.sh
 # **********************************************************
 git add .
-git commit -m "change V`date "+%Y-%m-%d %H:%M"`"
-#git push github master
-git push -u github +master
+git commit -m "change v1.$1"
+git push github master
+
